@@ -1,9 +1,3 @@
-// Note: I recommend implementing the tcpserver.c first.
-//
-// Compile with: gcc tcpclient.c -o tcpclient
-//
-// Implement tcp client below.
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,9 +12,7 @@ int main(){
 
 	// Create a socket
 	int client_socket;
-	// Note that the protocol matches our server here
-	// Also note I am doing some error checking for my socket.
-	// You may consider updating your server code to do the same.
+	// Error checking for socker
 	if((client_socket = socket(AF_INET, SOCK_STREAM, 0)) < 0){
 		printf("\n Socket creation error \n");
 	}
@@ -29,7 +21,7 @@ int main(){
 	struct sockaddr_in server_address;
 	server_address.sin_family = AF_INET; // 32-bit IPV4 address
 	server_address.sin_port = htons(9100); // convert to the appropriate port number using htons
-	server_address.sin_addr.s_addr = htons(INADDR_ANY); // Our ip address, which is localhost using INADDR_ANY
+	server_address.sin_addr.s_addr = htons(INADDR_ANY); // IP address, which is localhost using INADDR_ANY
 
 	// Attempt to connect
 	// Returns an integer as an error code (zero means everything worked)

@@ -1,7 +1,3 @@
-// Compile with: gcc tcpserver.c -o tcpserver
-//
-// Implement tcp server below.
-
 // Our standard libraries
 #include <stdio.h>
 #include <stdlib.h>
